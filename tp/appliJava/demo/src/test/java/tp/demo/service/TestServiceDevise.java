@@ -27,7 +27,10 @@ public class TestServiceDevise {
     @Test
     public void testFindAllDevise(){
         List<Devise> liste = serviceDevise.findAllDevises();
-        assertTrue(liste.size()>=2);
+        //idéalement logger.debug(....)
+        System.out.println("liste=" + liste);//t , aide au debug
+        assertTrue(liste.size()>=2 ,
+                "la taille de la liste devrait etre >=2");
     }
 
 }
