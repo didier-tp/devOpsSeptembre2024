@@ -18,6 +18,15 @@ docker image ls
 
 4) lancer le conteneur docker à partir de l'image construite:
 -------------------------------------------------------
-docker container run -d -p 8282:8181 xyz/demo
+docker container run --name c_demo -d -p 8282:8181 xyz/demo
 docker container ls
 curl http://localhost:8282/demo/index.html
+
+
+Attention :
+si image déjà construite et conteneur déjà lancé,
+il faut d'abord:
+  - arrêter le conteneur via docker container stop c_demo
+  - le supprimer via docker container rm c_demo
+  - supprimer l'image via docker image rm xyz/demo
+
