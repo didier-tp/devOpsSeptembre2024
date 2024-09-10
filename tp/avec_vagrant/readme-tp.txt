@@ -10,3 +10,4 @@ docker image ls
 
 docker container run -d -p 8282:8181 xyz/demo
 docker container ls
+curl http://localhost:8282/demo/index.html
