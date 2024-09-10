@@ -16,3 +16,4 @@ sudo ufw allow 8080
 #plugins à installer : buildTimeout , git et pipeline
 #nouveau username/password : admin/admin123
 #url (en tp): http://localhost:8080
+
