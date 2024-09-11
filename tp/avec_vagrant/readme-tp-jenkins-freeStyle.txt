@@ -1,4 +1,4 @@
-Une fois que Jenkins est installé et démarré une première fois avec compte admin/admin123 et plugins installé,
+Une fois que Jenkins est installé et démarré une première fois avec compte admin/admin123 et plugins installé, et que l'on s'est connecté à la console Jenkins (http://localhost:8080),
 ----
 Configurer le Tools "maven_3.9.9" avec path=/usr/share/apache-maven-3.9.9
 via le menu "administrer Jenkins" / installation de maven (ajout mais pas auto-install si déjàa installé)
