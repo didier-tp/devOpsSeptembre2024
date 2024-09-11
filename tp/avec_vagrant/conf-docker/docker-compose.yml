@@ -6,8 +6,8 @@ networks:
             
 services:
   mariadb:
-    image: mariadb:10.6
-    container_name: dataflow-mariadb
+    image: mariadb
+    container_name: mariadb
     restart: always
     environment:
       MARIADB_DATABASE: devise_db
@@ -20,12 +20,15 @@ services:
     expose:
       - 3306
     ports:
-      - '3306:3306'
+      - '3307:3306'
+      
   c_demo:
     #build : ../../rep_avec_Dockerfile
     image: xyz/demo
     restart: always
     container_name: c_demo
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
     ports:
       - '8282:8181'
     networks:
