@@ -38,6 +38,8 @@ pipeline {
                echo "construction image docker (souvent sous linux)"
                //sh "docker --version"
                //nb : sudo usermod -a -G docker jenkins 
+               // et (avec ou sans sudo)
+               //systemctl restart jenkins
                //is required (if not permission denied)
                //nb: nom image en minuscule !!!
                sh 'docker image build -t xyz/demo:latest .'
