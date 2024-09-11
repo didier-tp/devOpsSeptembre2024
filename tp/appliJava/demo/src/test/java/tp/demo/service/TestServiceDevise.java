@@ -1,20 +1,32 @@
 package tp.demo.service;
 
+import jakarta.annotation.PostConstruct;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import tp.demo.model.Devise;
+import tp.demo.repository.DeviseRepository;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
+@ActiveProfiles("h2")
 public class TestServiceDevise {
 
     @Autowired
     private ServiceDevise serviceDevise; // à tester
 
+    @Autowired
+    private DeviseRepository deviseRepository;
+
+    public void initData(){
+        deviseRepository.save(new Devise("EUR","Euro",1.0) );
+        deviseRepository.save(new Devise("USD","Dollar",1.1) );
+        deviseRepository.save(new Devise("GBP","Livre",1.2) );
+    }
     /*
     @BeforeEach
     public void init(){
@@ -26,6 +38,7 @@ public class TestServiceDevise {
 
     @Test
     public void testFindAllDevise(){
+        initData();
         List<Devise> liste = serviceDevise.findAllDevises();
         //idéalement logger.debug(....)
         System.out.println("liste=" + liste);//t , aide au debug
