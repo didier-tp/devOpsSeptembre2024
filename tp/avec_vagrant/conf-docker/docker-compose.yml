@@ -28,7 +28,7 @@ services:
     restart: always
     container_name: c_demo
     environment:
-      SPRING_PROFILES_ACTIVE: mysql
+      SPRING_PROFILES_ACTIVE: mysql,reinit
     ports:
       - '8282:8181'
     networks:
