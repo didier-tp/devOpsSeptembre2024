@@ -4,24 +4,7 @@ networks:
   mynetwork:
     external: true
             
-services:
-  mariadb:
-    image: mariadb
-    container_name: mariadb
-    restart: always
-    environment:
-      MARIADB_DATABASE: devise_db
-      MARIADB_ROOT_PASSWORD: root
-    networks:
-      mynetwork:
-        aliases:
-          - mysql_host
-          - mariadb_host
-    expose:
-      - 3306
-    ports:
-      - '3307:3306'
-      
+services:  
   c_demo:
     #build : ../../rep_avec_Dockerfile
     image: xyz/demo
@@ -29,9 +12,11 @@ services:
     container_name: c_demo
     environment:
       SPRING_PROFILES_ACTIVE: mysql,reinit
+      #SPRING_PROFILES_ACTIVE: h2,reinit
     ports:
       - '8282:8181'
     networks:
       mynetwork:
         aliases:
+          - c_demo
           - demo_host

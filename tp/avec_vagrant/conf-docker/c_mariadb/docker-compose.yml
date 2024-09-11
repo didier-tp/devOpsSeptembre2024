@@ -5,9 +5,9 @@ networks:
     external: true
             
 services:
-  mariadb:
-    image: mariadb
-    container_name: mariadb
+  c_mariadb:
+    image: mariadb:10
+    container_name: c_mariadb
     restart: always
     environment:
       MARIADB_DATABASE: devise_db
@@ -15,7 +15,7 @@ services:
     networks:
       mynetwork:
         aliases:
-          - mariadb
+          - c_mariadb
           - mysql_host
           - mariadb_host
     expose:
@@ -23,16 +23,4 @@ services:
     ports:
       - '3306:3306'
       
-  c_demo:
-    #build : ../../rep_avec_Dockerfile
-    image: xyz/demo
-    restart: always
-    container_name: c_demo
-    environment:
-      SPRING_PROFILES_ACTIVE: mysql,reinit
-    ports:
-      - '8282:8181'
-    networks:
-      mynetwork:
-        aliases:
-          - demo_host
+# service c_demo dans autre fichier docker-compose complémentaire
