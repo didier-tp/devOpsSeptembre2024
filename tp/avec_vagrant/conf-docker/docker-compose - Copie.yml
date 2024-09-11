@@ -15,13 +15,12 @@ services:
     networks:
       mynetwork:
         aliases:
-          - mariadb
           - mysql_host
           - mariadb_host
     expose:
       - 3306
     ports:
-      - '3306:3306'
+      - '3307:3306'
       
   c_demo:
     #build : ../../rep_avec_Dockerfile
