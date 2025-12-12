@@ -4,5 +4,6 @@ cd /mnt/c/tp/local-git-didier-tp-repositories/devOpsSeptembre2024/2025/tp/api_re
 
 python3 -m venv .venv
 
+pip install Flask
 
 deactivate
