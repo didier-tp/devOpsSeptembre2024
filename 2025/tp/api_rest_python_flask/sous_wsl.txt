@@ -1,0 +1,8 @@
+sudo apt install python3.13-venv
+------
+cd /mnt/c/tp/local-git-didier-tp-repositories/devOpsSeptembre2024/2025/tp/api_rest_python_flask ou autre
+
+python3 -m venv .venv
+
+
+deactivate
