@@ -23,3 +23,8 @@ python -m flask --app devise_api run
 python3 -m flask --app devise_api run
 ------------------
 http://127.0.0.1:5000/static/index.html
+=============================
+coté wsl:
+sudo apt install pipx
+cd /mnt/c/tp-devops/devOpsSeptembre2024/2025/tp/api_rest_python_flask
+pipx run flask --app devise_api run
