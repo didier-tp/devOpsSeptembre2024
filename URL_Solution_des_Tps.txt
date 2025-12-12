@@ -12,7 +12,14 @@ dans c:/tp-devops/devOpsSeptembre2024
 cd 2025/tp/api_rest_python_flask
 puis 
 pip install Flask
+ou bien 
+python -m pip install Flask
+python3 -m pip install Flask
+
 ---------------
 flask --app devise_api run
+ou bien
+python -m flask --app devise_api run
+python3 -m flask --app devise_api run
 ------------------
 http://127.0.0.1:5000/static/index.html
