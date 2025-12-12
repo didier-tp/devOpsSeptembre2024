@@ -28,3 +28,19 @@ coté wsl:
 sudo apt install pipx
 cd /mnt/c/tp-devops/devOpsSeptembre2024/2025/tp/api_rest_python_flask
 pipx run flask --app devise_api run
+====================
+ pipx run flask --app devise_api run &
+ ps -ef
+ 
+appels en GET:
+ curl http://127.0.0.1:5000/devise-api/v1/devises/USD
+ curl http://127.0.0.1:5000/devise-api/v1/devises/
+
+appel en POST (ajout):
+ curl http://127.0.0.1:5000/devise-api/v1/devises -H "Content-Type: application/json" -d  '{"code":"XXX" , "name" : "monnaieXXX" , "change" : 7.8 }'
+
+appel en PUT (update):
+ curl http://127.0.0.1:5000/devise-api/v1/devises/XXX -H "Content-Type: application/json" -X PUT -d  '{"code":"XXX" , "name" : "monnaieXXX_v2" , "change" : 7.9 }'
+
+appel en DELETE:
+ curl -X DELETE http://127.0.0.1:5000/devise-api/v1/devises/XXX
