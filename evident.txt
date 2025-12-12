@@ -1,0 +1,2 @@
+"partieFront"  ------> "partie Back" ----------> "partie BackBack"
+ (ex: HTML/JS)       (ex: Api Rest Python)      (ex: MySQL)

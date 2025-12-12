@@ -1,0 +1,7 @@
+https://github.com/didier-tp/vanilla_cypress_frontend
+-----
+pour faire fonctionner cela:
+1) installer nodeJs
+2) npm install
+   et …
+3) selon indication du projet
