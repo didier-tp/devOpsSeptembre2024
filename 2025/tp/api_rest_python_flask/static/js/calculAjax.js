@@ -21,6 +21,7 @@ function initListeners(){
 		makeAjaxGetRequest(wsUrl,(responseJson)=>{
 			console.log("responseJson="+responseJson);
 			let resObj = JSON.parse(responseJson);
+			spanRes.innerHTML="" + resObj.carre
 		});
 	});
 	
@@ -30,9 +31,10 @@ function initListeners(){
 		console.log("wsUrl="+wsUrl);
 		makeAjaxGetRequest(wsUrl,(responseJson)=>{
 			console.log("responseJson="+responseJson);
-			
+			let resObj = JSON.parse(responseJson);
+			spanRes.innerHTML="" + resObj.racine
 		});
 	});
 	
-	spanRes.innerHTML="0";
+	spanRes.innerHTML="0"; //by default
 }
