@@ -6,7 +6,9 @@ window.onload=function(){
 
 var spanRes;
 
-var calculBaseUrl = "http://127.0.0.1:5000/devise-api/v1/calculs/"
+//var calculBaseUrl = "http://127.0.0.1:5000/devise-api/v1/calculs/"
+//var calculBaseUrl = "http://localhost:5000/devise-api/v1/calculs/"
+var calculBaseUrl = "../devise-api/v1/calculs/"
 
 function initListeners(){
 	spanRes = document.getElementById("spanRes");
