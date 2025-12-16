@@ -5,7 +5,10 @@ app = Flask(__name__)
 from devise import Devise
 from devise_service import DeviseService
 
+from calculs import carre,racine_carree #ajout bizarre pour Tp devops
+
 api_prefix="/devise-api/v1/devises" #default sever url in dev mode: http://localhost:5000
+api_prefix_calculs="/devise-api/v1/calculs"
 
 #NB: by default flask and fastapi produces JSONResponse so dictionnary or list of dictionary are automatically
 # transform as json string , no need of json.dumps(...., ensure_ascii=False) or falsk.jsonify()
@@ -28,6 +31,18 @@ def get_devise_by_id(id):
         return asDict(DeviseService().getDeviseById(id))
     except Exception as e:
         abort(404,f"Devise not found for id={id}")
+
+@app.get(f"{api_prefix_calculs}/carre/<x>" ) 
+def get_calcul_carre(x):
+    x=float(x)
+    res = carre(x)
+    return { "x" : x , "carre" : res }
+    
+@app.get(f"{api_prefix_calculs}/racine_carree/<x>" ) 
+def get_calcul_racine_carree(x):
+    x=float(x)
+    res = racine_carree(x) 
+    return { "x" : x , "racine" : res }    
 
 
 @app.post(f"{api_prefix}" )
