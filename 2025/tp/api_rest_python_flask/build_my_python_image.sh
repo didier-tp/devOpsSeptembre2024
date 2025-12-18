@@ -1,0 +1,1 @@
+docker image build -t my_python_image .
