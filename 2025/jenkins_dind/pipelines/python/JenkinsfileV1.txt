@@ -1,0 +1,37 @@
+pipeline {
+    agent {
+        docker {
+		 image 'python_venv_pytest' 
+		}
+    }
+      environment{
+	        //NB: credential_dockerhub_didierdefrance69 is ID of credential
+		//prepared in "Admin Jenkins / Credentials / system /global"
+		dockerhub_credential_id='credential_dockerhub_didierdefrance69'
+		
+		//default/empty dockerRegistry is dockerhub
+		docker_registry= 'https://registry.hub.docker.com'
+		
+		docker_image_name='didierdefrance69/my_rest_api:1'
+      }
+
+    stages {
+        stage('from_git') {
+            steps {
+                  git url : 'https://github.com/didier-tp/my_python_rest_api' , branch : 'main'
+            }
+        }
+        stage('build') {
+            steps {
+                sh 'pip install -r requirements.txt'
+                echo 'build'
+            }
+        }
+        stage('tests') {
+            steps {
+                sh 'pytest --junit-xml test-reports/results.xml test_devise_api.py'
+            }
+        }
+
+    }
+}

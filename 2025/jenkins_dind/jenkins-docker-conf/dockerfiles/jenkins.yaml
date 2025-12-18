@@ -1,0 +1,30 @@
+jenkins:
+  numExecutors: 4
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: "admin"
+          password: "admin"
+  authorizationStrategy: loggedInUsersCanDoAnything
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          id: "jenkins-ssh-agent-private-key"
+          description: "private ssh key for jenkins agent "
+          privateKeySource:
+            directEntry:
+              privateKey: ${readFile:/ssh-dir/jenkins_agent_ed}
+          scope: SYSTEM
+          username: "jenkins"
+      - usernamePassword:
+          scope: GLOBAL
+          id: "credential_dockerhub_didierdefrance69"
+          username: "didierdefrance69"
+          password: "${readFile:/run/secrets/jenkins_d2f_dockerhub_pwd}"
+          description : "secret pwd for dockerhub user didierdefrance69"
+unclassified:
+  location:
+    url: "http://127.0.0.1:8888/"

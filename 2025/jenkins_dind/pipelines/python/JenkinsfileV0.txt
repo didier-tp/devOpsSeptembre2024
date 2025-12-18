@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        docker {
+		 image 'python_venv_pytest' 
+		}
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'python --version'
+            }
+        }
+    }
+}

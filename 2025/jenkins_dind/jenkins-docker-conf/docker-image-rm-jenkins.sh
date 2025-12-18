@@ -1,0 +1,1 @@
+docker image rm jenkins-docker-conf-jenkins_controller

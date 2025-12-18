@@ -1,0 +1,14 @@
+pipeline {
+    agent {
+        docker {
+		 image 'node:24' 
+		}
+    }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'npm --version'
+            }
+        }
+    }
+}
