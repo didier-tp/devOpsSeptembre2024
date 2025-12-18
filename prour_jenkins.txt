@@ -1,0 +1,6 @@
+dans référentiel
+https://github.com/didier-tp/devOpsSeptembre2024
+parties:
+   2025\jenkins_dind\jenkins-docker-conf (config docker pour faire fonctionner Jenkins)
+et
+   2025\tp\api_rest_python_flask (exemple de code à construire)
