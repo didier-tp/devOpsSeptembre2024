@@ -1,0 +1,2 @@
+https://gitlab.com/didier-lab/my-python.git
+branche dev ou main
