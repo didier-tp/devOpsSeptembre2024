@@ -1,0 +1,19 @@
+1)phase plan:
+----------
+
+scénario calculer mensualité emprunt:
+-------------------------------------
+1.l'utilisateur précise les paramètres de l'emprunt (montant , duree nb_mois , taux_interet en %)
+2.l'appli calcule la mensualité
+3.affichage de la mensualité calculée
+
+v1 : sans assurance
+v2 : avec assurance
+
+choix technique : langage python avec flask(api_rest) + mini_frontend en javascript
+
+--------------------
+
+2)code (ici en python)
+https://github.com/didier-tp/devOpsSeptembre2024/
+s'inspirer de 2025/tp pour faire 2026/tp (calcul mensualité)

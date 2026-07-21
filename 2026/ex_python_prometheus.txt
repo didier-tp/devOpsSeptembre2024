@@ -1,0 +1,14 @@
+https://dev.to/marioflores7/observability-practices-with-python-prometheus-and-grafana-1d18
+
+https://medium.com/@simrankumari1344/setting-up-prometheus-server-with-a-python-app-a-step-by-step-guide-fadba7d35dbe
+
+https://betterstack.com/community/guides/monitoring/prometheus-python-metrics/
+
+https://liora.io/prometheus-tout-savoir
+
+https://blog.stephane-robert.info/docs/outils/observabilite/metriques/prometheus/
+https://blog.stephane-robert.info/docs/outils/observabilite/visualisation/grafana/
+
+https://www.jjworld.fr/prometheus-grafana-superviser-vos-serveurs/
+
+https://geekpaul.medium.com/introducing-prometheus-with-grafana-metrics-collection-and-monitoring-36ca88ac4332
