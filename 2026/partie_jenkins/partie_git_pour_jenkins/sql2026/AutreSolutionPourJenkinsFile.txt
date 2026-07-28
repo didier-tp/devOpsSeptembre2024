@@ -1,0 +1,4 @@
+au lieu d'utiliser "network docker" et -h (execution externe des scripts)
+on pourrait utiliser "docker exec …" pour exécuter les scripts de l'interieur sur le container "server mariadb" préalablement lancé.
+====
+idem pour tester l'image construite

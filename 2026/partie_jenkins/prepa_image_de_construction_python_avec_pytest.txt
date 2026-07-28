@@ -1,0 +1,3 @@
+cd /mnt/c/tp/tp-jenkins/jenkins-dind/build-docker-images (ou autre)
+sh build_python_venv_pytest_image.sh
+docker image ls

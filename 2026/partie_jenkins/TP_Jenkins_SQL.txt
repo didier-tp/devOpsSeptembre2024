@@ -1,0 +1,37 @@
+installation de la partie cliente seulement de mariadb ou MySQL de manière à tester une image docker construite en fin de journée:
+-----------------------------------
+sudo apt-get install mariadb-client
+mariadb --version
+
+Voir cette documentation pour savoir comment lancer automatiquement un script SQL avec une image docker mariadb:
+-----------------------------------------------------------------------
+https://mkyong.com/docker/how-to-run-an-init-script-for-docker-mariadb/
+
+
+But du Tp:
+--------
+1) préparer un référentiel git sql2026 (ou autre) comportant 3 script sql
+ init-db.sql avec CREATE DATABASE  et CREATE TABLE pour créer geoDB et table departement (num , nom , prefecture)
+ insert-db.sql avec quelques insert into dans table departement
+ select-db.sql avec select sur table departement pour verifier
+2) créer progressivement un pipeline Jenkins qui va
+    - afficher la liste des fichiers sql
+    - lancer init-db.sql (autre stage)
+    - lancer insert-db.sql (autre stage)
+    - lancer select-db.sql (autre stage)
+    - créer une image docker avec un dockerfile ajoutant les 3 fichiers sql dans un répertoire adéquat
+      (lire doc au bout du lien hypertexte si dessus)
+      nom de l'image à construire xyz/geodb:1 (ou xyz est votre nom de compte dockerhub)
+    - publier (si possible) l'image docker sur dockerhub
+3) paramétrer un lancement automatique dès que le code change sur git
+4) tester l'image construite en :
+    - lançant un container depuis cette image
+    - utilisant mariadb (partie cliente) pour déclencher un select * from departement
+5) peaufiner éventuellement le code via table secondaire "region" et jointure entre les tables region et departement
+...
+
+
+
+
+
+
